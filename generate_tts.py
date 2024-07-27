@@ -7,7 +7,7 @@ API_KEY = "<ELEVENLAB_TOKEN>"
 CHUNK_SIZE = 1024
 URL = "https://api.elevenlabs.io/v1/text-to-speech/EXAVITQu4vr4xnSDxMaL"
 HA_URL = "http://<HA_IP>:8123/api/states/sensor.latest_tts_filename"
-HA_TOKEN = "<HA_TOKEN"
+HA_TOKEN = "<HA_TOKEN>"
 
 def generate_tts(input_text):
     # Create a unique filename based on the text input
