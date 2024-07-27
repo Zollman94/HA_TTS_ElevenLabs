@@ -1,0 +1,5 @@
+service: script.tts
+metadata: {}
+data:
+  message: Hello, from Czech Republic!
+  media: media_player.tablet
