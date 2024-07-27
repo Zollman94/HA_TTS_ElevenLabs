@@ -67,10 +67,14 @@ This project integrates ElevenLabs Text-to-Speech (TTS) service into Home Assist
 
 ## Configuration
 
-1. **Update Tokens and URLs:**
+1. **Register Tokens:**
+   - Visit http://elevenlabs.io and register yourself for free to obtain **API token**.
+   - Log in to you Home Assistant instance, click on you name in bottom left corner then security and create **long-lived access token**.
+     
+3. **Update Tokens and URLs:**
    - Open the `generate_tts.py` script and replace the placeholders `<ELEVENLAB_TOKEN>`, `<HA_TOKEN>`, and `<HA_IP>` with your actual ElevenLabs API token, Home Assistant Long-Lived Access Token, and Home Assistant IP address, respectively.
 
-2. **Create Shell Command:**
+4. **Create Shell Command:**
    - Add the following shell command to your `configuration.yaml` file to allow Home Assistant to execute the TTS script:
    
     ```yaml
@@ -78,7 +82,7 @@ This project integrates ElevenLabs Text-to-Speech (TTS) service into Home Assist
       generate_tts: 'python3 /config/scripts/generate_tts.py "{{ text }}"'
     ```
 
-3. **Add TTS Script:**
+5. **Add TTS Script:**
    - Replace `<HA_IP>` with your corresponding ip adress and add the following script to **Home Assistant**:
    
     ```yaml
