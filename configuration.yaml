@@ -1,0 +1,6 @@
+sensor:
+  - platform: template
+    sensors:
+      latest_tts_filename:
+        friendly_name: "Latest TTS Filename"
+        value_template: "{{ states('sensor.latest_tts_filename') }}"
