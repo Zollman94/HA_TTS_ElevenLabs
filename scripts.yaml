@@ -1,0 +1,32 @@
+tts:
+  alias: TTS ElevenLabs
+  sequence:
+  - service: shell_command.generate_tts
+    data:
+      text: '{{ message }}'
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: media_player.play_media
+    target:
+      entity_id: '{{ media }}'
+    data:
+      media_content_id: http://<HA_IP>:8123/local/tts/{{ states('sensor.latest_tts_filename')
+        }}
+      media_content_type: audio/mp3
+  fields:
+    message:
+      selector:
+        text:
+      name: message
+      description: Message for tts service
+      default: No message input
+      required: true
+    media:
+      selector:
+        entity: {}
+      name: media
+      description: media.entity_id
+      required: true
